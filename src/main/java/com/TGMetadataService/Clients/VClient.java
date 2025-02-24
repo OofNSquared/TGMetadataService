@@ -21,9 +21,14 @@ public class VClient implements AIClientInterface {
             conn.setRequestProperty("Content-Type", "application/json");
             conn.setDoOutput(true);
 
-            // Hardcoded test case for podcast generation. Inputs should be decided from user algorithm
+            // Hardcoded test case for podcast generation. Inputs should be decided from user algorithm.
+            // We can also dynamically set this by initiating random on selection on the get: theme, topic, voice, etc.
             String requestBody = "{"
+                    // Literally my favorite place to eat so its our use case. 10/10 recommend.
+                    + "\"url\": \"https://towa-wa.com/about/index.html\","
+                    + "\"name1\": \"joe\","
                     + "\"topic\": \"Random AI Story\","
+                    + "\"name2\": \"ryan\","
                     + "\"voice\": \"Charlie\","
                     + "\"theme\": \"Hormozi_1\","
                     + "\"language\": \"English\","
@@ -48,5 +53,8 @@ public class VClient implements AIClientInterface {
             e.printStackTrace();
             return "Error: " + e.getMessage();
         }
+    }
+    public getResponse() {
+        // {"vid":924216641651} example generated from above.
     }
 }
